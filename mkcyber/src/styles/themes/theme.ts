@@ -62,6 +62,11 @@ const theme = createTheme({
           paddingLeft: '2px',
           paddingRight: '2px',
 
+          ':hover': {
+            background: 'rgba(231, 241, 231, .2)',
+            
+          }
+
         }
       }
     },
