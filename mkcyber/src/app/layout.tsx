@@ -4,6 +4,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from "../styles/themes/theme";
+import Navbar from "../components/navbar";
 
 export const metadata: Metadata = {
   title: "mkcyber",
@@ -18,6 +19,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
+            <Navbar />
             {props.children}
           </ThemeProvider>
         </AppRouterCacheProvider>
