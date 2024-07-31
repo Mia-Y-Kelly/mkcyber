@@ -34,7 +34,6 @@ let data : [string, string, ReactNode][] = [
 const openWidth = 200;
 const closedWidth = 100;
 
-
 const openTransition = (theme: Theme): CSSObject => ({
     width: openWidth,
     transition: theme.transitions.create('width', {
@@ -106,7 +105,11 @@ export default function Navbar() {
                             >
                                 {item[2]}
                             </ListItemIcon>
-                            <ListItemText primary={item[0]} sx={{ display: open ? 'block' : 'none'}}/>
+                            <ListItemText primary={item[0]} sx={{ 
+                                display: open ? 'block' : 'none',
+                                color: 'lightPink',
+                                paddingRight: '10px'
+                            }}/>
                         </ListItemButton>
                     </Link>
                 </ListItem>

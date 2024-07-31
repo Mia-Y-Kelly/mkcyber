@@ -1,56 +1,58 @@
 'use client';
-import { Roboto } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
-import { red, yellow } from '@mui/material/colors';
 
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+const lightPink = '#F8BBD0';
+
+// Augment the palette to include an about color
+declare module '@mui/material/styles' {
+  interface Palette {
+    about: Palette['primary'];
+  }
+
+  interface PaletteOptions {
+    about?: PaletteOptions['primary'];
+  }
+}
 
 const theme = createTheme({
   palette: {
     mode: 'light',
     text: {
-      primary: '#000',
-      secondary: 'rgba(255, 255, 255, 0.7)',
+      primary: 'rgb(19, 21, 21)', // Black text color
+      secondary: '#ff758f',  // Light Pink Text color
       disabled: 'rgba(0, 0, 0, 0.12)',
-      // icon: '#FFF', 
     },
-    primary: {
+    primary: {            // Green
       main: '#243727',
       light: '#4a694d',
       dark: '#111d13',
-      contrastText: '#F8BBD0',
+      contrastText: lightPink,
     },
-    secondary: {
-      main: '#243727',
-      light: '#4a694d',
-      dark: '#111d13',
-      contrastText: '#F8BBD0',
+    secondary: {          // Pink
+      main: '#800f2f',
+      light: '#ffb3c1',
+      dark: '#800f2f',
+      contrastText: '#e1eee1',
     },
     background: {
-      default: '#e1eee1',   // Sets background
+      default: '#f0fff0',   // Sets background
       paper: '#243727',     // Sets background for components
     },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: 'sans-serif',
   },
   
   components: {
     MuiList: {
       styleOverrides: {
         root: {
-          margin: '10px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center'
         }
       }
     },
-
     MuiListItemButton: {
       styleOverrides: {
         root: {
@@ -70,18 +72,22 @@ const theme = createTheme({
         }
       }
     },
-    MuiListItemText: {
-      styleOverrides: {
-        root: {
-          color: '#F8BBD0',
-          paddingRight: '10px'
-        }
-      }
-    },
     MuiDivider: {
       styleOverrides: {
         root: {
           backgroundColor: '#F8BBD0',
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#FFF',
+          borderRadius: '12px',
+          border: '1px solid rgb(19, 21, 21)',
+          boxShadow: '12px 12px 0px rgb(19, 21, 21)',
+          width: '60vw',
+          margin: '1vh 0 3vh 0',
         }
       }
     },
