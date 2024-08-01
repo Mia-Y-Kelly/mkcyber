@@ -114,7 +114,7 @@ export default function Home({
                 boxShadow: '2px 2px 2px #111d13'
               }}
           />
-          <Box sx={{width: '60vw', margin: '0 0 5vh 0'}}>
+          <Box sx={{width: '60vw', margin: '15px 0 5vh 0'}}>
             <Typography lineHeight={1.75} color="text.primary" align="center">
               I am a graduate of Michigan Technological University with a BS in Computer Science and a minor in cybersecurity. I am actively seeking employment opportunities, and I am open to relocation.
             </Typography>
@@ -324,7 +324,7 @@ export default function Home({
       <Typography variant="h5" color="secondary.dark">
         <span style={{fontWeight: 'bold'}}>Courses</span>  
       </Typography>
-      <Typography sx={{fontStyle: 'italic'}}>* College transcript available upon request</Typography>
+      <Typography sx={{fontStyle: 'italic', marginBottom: '15px'}}>* College transcript available upon request</Typography>
       <CustomAccordian />
     </Box>
     </Box>
