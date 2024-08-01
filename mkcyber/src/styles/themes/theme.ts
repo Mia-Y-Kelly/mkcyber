@@ -35,7 +35,9 @@ const theme = createTheme({
       contrastText: '#e1eee1',
     },
     background: {
-      default: '#f0fff0',   // Sets background
+      // default: '#f0fff0',   // Sets background
+      // default: '#E2F1E2',
+      default: '#FFFFFF',
       paper: '#243727',     // Sets background for components
     },
   },
@@ -84,9 +86,8 @@ const theme = createTheme({
         root: {
           backgroundColor: '#FFF',
           borderRadius: '12px',
-          border: '1px solid rgb(19, 21, 21)',
-          boxShadow: '12px 12px 0px rgb(19, 21, 21)',
-          width: '60vw',
+          border: '1px solid rgb(50, 50, 50)',
+          boxShadow: '12px 12px 0px rgb(50, 50, 50)',
           margin: '1vh 0 3vh 0',
         }
       }
