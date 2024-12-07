@@ -9,17 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/cache": "^11.1.5",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@fontsource/roboto": "^5.0.13",
-    "@mui/icons-material": "^5.16.4",
-    "@mui/lab": "^5.0.0-alpha.173",
-    "@mui/material": "^5.16.4",
-    "@mui/material-nextjs": "^5.16.4",
-    "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18",
+    "@mui/icons-material": "^6.0.0",
+    "@mui/lab": "^6.0.0-beta.14",
+    "@mui/material": "^6.1.6",
+    "@mui/material-nextjs": "^6.1.6",
+    "eslint-config-next": "^15.0.4",
+    "next": "^15.0.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "sass": "^1.77.8"
   },
   "devDependencies": {

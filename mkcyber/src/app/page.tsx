@@ -14,13 +14,9 @@ import CardContent from '@mui/material/CardContent';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 
-// Tab imports
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabPanel from '@mui/lab/TabPanel';
-import TabList from '@mui/lab/TabList';
-import CustomAccordian from "../components/customAccordian";
+import CourseSection from "../components/courseSection";
 
+import Projects from "../components/projects";
 
 
 // Import icons
@@ -39,17 +35,6 @@ export default function Home({
 }: {
   children: ReactNode
 }) {
-  const [value, setValue] = useState('1');
-
-  const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
-
-  const [open, setOpen] = useState(true);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
 
   return (
     <Box
@@ -208,124 +193,11 @@ export default function Home({
       
       {/* PROJECTS SECTION */}
       <Box>
-        <Typography variant="h5" color="secondary.dark">
-            <b>Projects</b>  
-        </Typography>
-        <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <TabList 
-              onChange={handleTabChange}
-              variant="scrollable"
-              textColor="secondary"
-              indicatorColor="secondary"
-              aria-label="Project experience"
-            >
-              <Tab
-                disableRipple
-                disableFocusRipple
-                label="HuskyTerm" 
-                value="1"
-                sx={{ 
-                  fontWeight: 'bold',
-                  maxWidth: '10vw'  
-                }}
-              />
-              <Tab
-                disableRipple
-                disableFocusRipple
-                label="Malicious Packet Checker" 
-                value="2"
-                sx={{ 
-                  fontWeight: 'bold',
-                  maxWidth: '10vw'   
-                }} 
-              />
-              <Tab
-                disableRipple
-                disableFocusRipple
-                label="StudyUp" 
-                value="3"
-                sx={{ 
-                  fontWeight: 'bold',
-                  maxWidth: '10vw'  
-                }}
-              />
-              <Tab
-                disableRipple
-                disableFocusRipple
-                label="Green Campus Enterprise Food Calculator" 
-                value="4"
-                sx={{ 
-                  fontWeight: 'bold',
-                  maxWidth: '12vw'    
-                }}
-              />
-              <Tab
-                disableRipple
-                disableFocusRipple
-                label="NCSA Lab Hours Tracker" 
-                value="5"
-                sx={{ 
-                  fontWeight: 'bold',
-                  maxWidth: '10vw'   
-                }} 
-              />
-              <Tab
-                disableRipple
-                disableFocusRipple
-                label="AI Cell Membrane Detection" 
-                value="6" 
-                sx={{ 
-                  fontWeight: 'bold',
-                  maxWidth: '10vw'   
-                }}
-              />
-            </TabList>
-          </Box>
-          <TabPanel value="1">
-            <Typography>
-              Developing JavaScript-based terminal that allows SSH connections; will be embeddable in applications.
-            </Typography>
-            <Typography><b style={{color: "#800f2f"}}>Skills:</b> Xterm.js, Docker</Typography>
-          </TabPanel>
-          <TabPanel value="2">
-            <Typography>
-              Created a malicious IP checker using a random bloom filter.
-            </Typography>
-            <Typography><b style={{color: "#800f2f"}}>Skills:</b> C++, Random Bloom Filter (RBF), Hashing</Typography>
-          </TabPanel>
-          <TabPanel value="3">
-            <Typography>
-              Tool intended to emulated the paywalled functions of the popular study tool Quizlet.
-            </Typography>
-            <Typography><b style={{color: "#800f2f"}}>Skills:</b> React, Java Spring Boot, PostgreSQL, AWS EC2, Apache Tomcat, Agile (Scrum)</Typography>
-          </TabPanel>
-          <TabPanel value="4">
-            <Typography>
-              Application to calculate food waste when given a raw data file. Used this project to learn the basics of MatLab.
-            </Typography>
-            <Typography><b style={{color: "#800f2f"}}>Skills:</b> MatLab, MatLab App Design</Typography>
-          </TabPanel>
-          <TabPanel value="5">
-            <Typography>
-              Full stack application originally built using the MERN stack. Migrating project to NextJS and PostgreSQL.
-            </Typography>
-            <Typography><b style={{color: "#800f2f"}}>Skills:</b> MongoDB, Express.js, React, NodeJS, PostgreSQL</Typography>
-          </TabPanel>
-          <TabPanel value="6">
-            <Typography>
-              Data science project intended to predict the movement of cells.
-            </Typography>
-            <Typography ><b style={{color: "#800f2f"}}>Skills:</b> Keras, MatPlotLib, Panadas, NumPy, Bash, Anaconda, Agile (Scrum)</Typography>
-          </TabPanel>
-        </TabContext>
-    </Box>
+        <Projects />
+      </Box>
+    {/* COURSES SECTION */}
     <Box>
-      <Typography variant="h5" color="secondary.dark">
-        <span style={{fontWeight: 'bold'}}>Courses</span>  
-      </Typography>
-      <Typography sx={{fontStyle: 'italic', marginBottom: '15px'}}>* College transcript available upon request</Typography>
-      <CustomAccordian />
+      <CourseSection />
     </Box>
     </Box>
   );

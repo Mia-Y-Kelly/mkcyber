@@ -30,21 +30,23 @@ const theme = createTheme({
     },
     secondary: {          // Pink
       main: '#800f2f',
-      light: '#ffb3c1',
-      dark: '#800f2f',
+      // light: '#ffb3c1',
+      light: '#FFCCCD',
+      dark: '#800F2F',
       contrastText: '#e1eee1',
     },
     background: {
       // default: '#f0fff0',   // Sets background
       // default: '#E2F1E2',
-      default: '#FFFFFF',
+      // default: '#FFFFFF',
       paper: '#243727',     // Sets background for components
     },
   },
   typography: {
     fontFamily: 'sans-serif',
+    fontWeightRegular: 400,
+    fontWeightBold: 800
   },
-  
   components: {
     MuiList: {
       styleOverrides: {
