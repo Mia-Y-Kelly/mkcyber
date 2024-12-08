@@ -71,6 +71,7 @@ export default function CourseSection() {
             <Typography variant="h5" color="secondary.dark" marginTop="1rem">
                 <span style={{fontWeight: 'bold'}}>Courses</span>  
             </Typography>
+            
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList
@@ -86,6 +87,7 @@ export default function CourseSection() {
                                 disableRipple
                                 disableFocusRipple
                                 label={cat} 
+                                key={index}
                                 value={index.toString()}
                                 sx={{ 
                                     fontWeight: 'bold',
@@ -98,10 +100,10 @@ export default function CourseSection() {
                 </Box>
             {
                 courses.map((courseList, index) => (
-                    <TabPanel value={index.toString()}>
+                    <TabPanel key={index} value={index.toString()}>
                         <List sx={{listStyleType: 'disc'}}>
                             {courseList.map((course, idx) => (
-                                <ListItem value={course} sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>
+                                <ListItem key={idx} value={course} sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>
                                     {course}
                                 </ListItem>
                             ))}
