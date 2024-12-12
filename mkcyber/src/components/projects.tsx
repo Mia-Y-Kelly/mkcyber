@@ -85,7 +85,7 @@ export default function Projects(){
                             aria-controls="panel1-content"
                             id="panel1-header"
                         >
-                            <Typography >
+                            <Typography>
                                 {cat}
                             </Typography>           
                         </AccordionSummary>

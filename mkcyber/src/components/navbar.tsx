@@ -20,6 +20,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
+// import Drawer from '@mui/material/Drawer';
 
 /**
  * Store name, url path, icon
@@ -38,14 +39,14 @@ const openTransition = (theme: Theme): CSSObject => ({
     width: openWidth,
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
+        duration: theme.transitions.duration.short,
     }),
 });
 
 const closeTransition = (theme: Theme): CSSObject => ({
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
+        duration: theme.transitions.duration.short,
     }),
     width: closedWidth
 });
@@ -79,7 +80,7 @@ export default function Navbar() {
             <Box
                 sx={{
                     display: 'flex',
-                    justifyContent: 'flex-end'
+                    justifyContent: 'flex-end',
                 }}
             >
                 <IconButton 
