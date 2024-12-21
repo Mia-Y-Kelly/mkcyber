@@ -67,9 +67,6 @@ export default function Projects(){
 
     return(
         <Box>
-            <Typography variant="h5" color="secondary.dark">
-                <b>Projects</b>  
-            </Typography>
             <Box>
             {
                 courseCat.map((cat, index) => (

@@ -94,6 +94,22 @@ const theme = createTheme({
         }
       }
     },
+    MuiAccordion: {
+      defaultProps: {
+        'disableGutters': true,
+        'square': false,
+        'elevation': 0,
+      },
+      styleOverrides: {
+        root: {
+          'borderTop': 'none',
+          'borderBottom': '1px solid #800f2f',
+          'backgroundColor': '#FFF',
+          'elevation': '0',
+          'boxShadow': 'none',
+        }
+      }
+    }
   },
 });
 

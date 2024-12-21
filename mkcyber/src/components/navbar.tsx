@@ -20,13 +20,15 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
-// import Drawer from '@mui/material/Drawer';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import { Home } from '@mui/icons-material';
 
 /**
  * Store name, url path, icon
  */
 let data : [string, string, ReactNode][] = [
-    ['Portfolio', '/', <BusinessCenterOutlinedIcon sx={{'padding': '0px'}} />], 
+    ['Home', '/', <HomeOutlinedIcon sx={{'padding': '0px'}} /> ],
+    ['Portfolio', '/portfolio', <BusinessCenterOutlinedIcon sx={{'padding': '0px'}} />], 
     ['Security+', '/security-plus', <SecurityOutlinedIcon sx={{'padding': '0px'}} />], 
     ['Resources', '/resources', <LibraryBooksOutlinedIcon sx={{'padding': '0px'}} />]
 ]

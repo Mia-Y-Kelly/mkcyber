@@ -1,4 +1,5 @@
 'use client'
+
 import { useState } from "react";
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -7,34 +8,68 @@ import image from '@/src/public/Mia Kelly.jpg';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 
-// List imports
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 
 import CourseSection from "../components/courseSection";
-
-import Projects from "../components/projects";
-
 
 // Import icons
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import CircleIcon from '@mui/icons-material/Circle';
-import { Toys } from "@mui/icons-material";
+
+
+// Table stuff
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabPanel from '@mui/lab/TabPanel';
+import TabList from '@mui/lab/TabList';
+
+// Accordian
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+// Components
+import WorkExperience from "../components/workExperience";
+import Projects from "../components/projects";
+
 
 let ogPhotoHeight: number = 3797
 let ogPhotoWidth: number = 2850
 let scale: number = 12
+
+
 
 export default function Home({
   children
 }: {
   children: ReactNode
 }) {
+  // const accordionStyle = {
+  //   'borderTop': '2px solid black',
+  //   'borderRight': '2px solid black',
+  //   'borderLeft': '2px solid black',
+  //   'borderBottom': '2px solid #800f2f',
+  //   'boxShadow': '0rem .5rem #800f2f',
+  //   'borderRadius': '.75rem',
+  //   'backgroundColor': '#FFF',
+  //   'marginBottom': '1.5rem',
+  //   '&:hover': {
+  //       'backgroundColor': '#FFCCCD',
+  //   }
+  // }
+
+  // const itemStyling = {
+  //     'borderRadius': '0rem 0rem 1rem 1rem'
+  // }
+  const [value, setValue] = useState(0);
+   const categories: readonly string[] = ['Work Experience', 'Additional Projects']
+    
+  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
 
   return (
     <Box
@@ -48,7 +83,7 @@ export default function Home({
       }}
     >
       {/* ABOUT SECTION */}
-      <span>
+      <Box>
         <Typography variant="h1" align="center">
           Hi! I'm <b style={{color: "#800f2f"}}>Mia Kelly</b>
         </Typography>
@@ -113,92 +148,62 @@ export default function Home({
             </Typography>
           </Box>
         </Box>
-      </span>
-      
+      </Box>
+    
+     {/* <Accordion
+        square
+        disableGutters
+        // sx={accordionStyle}
+        elevation={0}
+      >
+        <AccordionSummary
+          aria-controls="panel-content"
+          expandIcon={<ExpandMoreIcon />}
+          
+        >
+           <Typography>Expand More</Typography> 
+        </AccordionSummary>
+        <AccordionDetails>*/}
+          {/* <TabContext value={value}>
+            <TabList
+            onChange={handleTabChange}
+            centered
+            textColor="secondary"
+            indicatorColor="secondary"
+            aria-label="Categories"
+            >
+            {
+                categories.map((cat, index) => ( 
+                    <Tab
+                    disableRipple
+                    disableFocusRipple
+                    label={<Typography variant="h5" fontWeight="fontWeightBold">{cat}</Typography>} 
+                    key={index}
+                    value={index}
+                    />
+                ))
+            }
+            </TabList> */}
+            {/* WORK EXPERIENCE SECTION */}
+            {/* <TabPanel key={0} value={0}>
+            <WorkExperience />
+            </TabPanel> */}
 
-      {/* WORK EXPERIENCE SECTION */}
-      <Box>
-        <Typography variant="h5" color="secondary.dark">
-          <b>Work Experience</b>  
-        </Typography>
-        <Card variant="outlined">
-            <CardContent>
-              <Typography color="secondary.dark"><b>Undergraduate Research Assistant</b></Typography>
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between'
-                }}
-              >
-                <Typography>Michigan Technological University | Dr. Yu Cai</Typography>
-                <Typography>Oct. 2023 - June 2024</Typography>
-              </Box>
-              
-              <List sx={{listStyleType: 'disc'}}>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Led a group of six students in the development of an educational cybersecurity platform</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Created a web component that embedded an emulated terminal into the web browser using Xterm.js.</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Designed and implemented RESTful API using NodeJS and Express.</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Dockerized application for minimized overhead and platform agnostic development.</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Automated continuous production deployments using cron jobs on cPanel.</ListItem>
-              </List>
-              <Typography><b style={{color: "#800f2f"}}>Skills:</b> RESTful API, Express, Node, Docker, Google OAuth, cPanel, crontab</Typography>
-            </CardContent>
-        </Card>
-        <Card variant="outlined">
-            <CardContent>
-              <Typography color="secondary.dark"><b>Full Stack Intern</b></Typography>
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between'
-                }}
-              >
-                <Typography>Fidelity Investments | Fidelity Brokerage Technology (FBT)</Typography>
-                <Typography>June 2023 - Aug. 2023</Typography>
-              </Box>
-              <List sx={{listStyleType: 'disc'}}>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Tested a SpringBoot API which monitored activity between a mainframe and cloud environment.</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Performed Datadog analysis that reduced costs by over $1,000 per month.</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Renewed and retired container certificates using Jenkins and Kubernetes.</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Consulted with subject matter experts to design a procedure for streamlining cloud application development.</ListItem>
-              </List>
-              <Typography><b style={{color: "#800f2f"}}>Skills:</b> RESTful API, Express, Node, Docker, Google OAuth, cPanel, crontab</Typography>
-            </CardContent>
-        </Card>
-        <Card variant="outlined" >
-            <CardContent>
-              <Typography color="secondary.dark"><b>IT Technician</b></Typography>
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between'
-                }}
-              >
-                <Typography>Michigan Technological University</Typography>
-                <Typography>Nov. 2020 - April 2022</Typography>
-              </Box>
-              <List sx={{listStyleType: 'disc'}}>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside',  padding: 0}}>Replaced hardware on Dell, Lenovo, Mac, etc.
-                  </ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Performed troubleshooting for software issues on Windows, Mac, and RHEL operating systems.</ListItem>
-                  <ListItem sx={{display: 'list-item', listStylePosition: 'inside',padding: 0}}>Tracked client tickets using ServiceDesk and Confluence.</ListItem>
-              </List>
-              <Typography><b style={{color: "#800f2f"}}>Skills:</b> RESTful API, Express, Node, Docker, Google OAuth, cPanel, crontab</Typography>
-            </CardContent>
-        </Card>
-      </Box>
-      
-      {/* PROJECTS SECTION */}
-      <Box>
-        <Projects />
-      </Box>
-    {/* COURSES SECTION */}
-    <Box>
-      <CourseSection />
-    </Box>
+            {/* PROJECTS SECTION */}
+            {/* <TabPanel key={1} value={1}>
+            <Projects />
+            </TabPanel>
+          </TabContext> 
+        </AccordionDetails>
+      </Accordion> */}
+      <Accordion>
+        <AccordionSummary>
+          Testing
+        </AccordionSummary>
+        <AccordionDetails>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga necessitatibus mollitia possimus doloribus! Itaque atque quibusdam perspiciatis sunt voluptatem minima, molestiae soluta natus dolore totam voluptate impedit explicabo quasi eveniet, reiciendis quo dolor culpa. Officiis, possimus odit minus molestias doloremque pariatur cupiditate quas officia reprehenderit asperiores quasi! Voluptatum enim impedit nobis quaerat, eius iusto repellendus odit reiciendis non ullam nulla corrupti libero tenetur expedita saepe labore accusamus rem unde et nihil hic placeat nemo. Laboriosam nihil nemo magnam eveniet eaque maxime. Assumenda repellat modi neque accusamus omnis qui, dolore, repellendus dolorum cumque, libero dolor recusandae eveniet ex laudantium iure in. Est esse eveniet perferendis, pariatur quam quas? Cupiditate qui laboriosam repudiandae ipsa quasi aliquid illum asperiores, accusantium iure recusandae consequatur eius excepturi inventore, voluptatibus vero magni, commodi modi? Numquam ipsam assumenda accusamus repellendus ad excepturi, laboriosam dolor praesentium quas exercitationem amet magnam sapiente quidem cum quis illo sequi veniam rerum labore facilis saepe, eligendi alias soluta! Ad nisi ut, deserunt soluta, fugiat quidem magnam sequi ab fuga consequatur laborum maxime a enim ipsum. At deserunt reiciendis ex sunt fuga velit, non excepturi optio reprehenderit, impedit amet exercitationem labore iste mollitia quam vitae ipsa eos totam facilis modi nam animi. Possimus.
+        </AccordionDetails>
+      </Accordion>
     </Box>
   );
 }
