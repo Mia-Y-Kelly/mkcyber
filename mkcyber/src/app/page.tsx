@@ -34,8 +34,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // Components
 import WorkExperience from "../components/workExperience";
 import Projects from "../components/projects";
-
-
+import CustomAccordian from "../components/customAccordian";
+import ArrowRightAlt from '@mui/icons-material/ArrowRightAlt';
 let ogPhotoHeight: number = 3797
 let ogPhotoWidth: number = 2850
 let scale: number = 12
@@ -196,14 +196,24 @@ export default function Home({
           </TabContext> 
         </AccordionDetails>
       </Accordion> */}
-      <Accordion>
+      {/* <Accordion>
         <AccordionSummary>
           Testing
         </AccordionSummary>
         <AccordionDetails>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga necessitatibus mollitia possimus doloribus! Itaque atque quibusdam perspiciatis sunt voluptatem minima, molestiae soluta natus dolore totam voluptate impedit explicabo quasi eveniet, reiciendis quo dolor culpa. Officiis, possimus odit minus molestias doloremque pariatur cupiditate quas officia reprehenderit asperiores quasi! Voluptatum enim impedit nobis quaerat, eius iusto repellendus odit reiciendis non ullam nulla corrupti libero tenetur expedita saepe labore accusamus rem unde et nihil hic placeat nemo. Laboriosam nihil nemo magnam eveniet eaque maxime. Assumenda repellat modi neque accusamus omnis qui, dolore, repellendus dolorum cumque, libero dolor recusandae eveniet ex laudantium iure in. Est esse eveniet perferendis, pariatur quam quas? Cupiditate qui laboriosam repudiandae ipsa quasi aliquid illum asperiores, accusantium iure recusandae consequatur eius excepturi inventore, voluptatibus vero magni, commodi modi? Numquam ipsam assumenda accusamus repellendus ad excepturi, laboriosam dolor praesentium quas exercitationem amet magnam sapiente quidem cum quis illo sequi veniam rerum labore facilis saepe, eligendi alias soluta! Ad nisi ut, deserunt soluta, fugiat quidem magnam sequi ab fuga consequatur laborum maxime a enim ipsum. At deserunt reiciendis ex sunt fuga velit, non excepturi optio reprehenderit, impedit amet exercitationem labore iste mollitia quam vitae ipsa eos totam facilis modi nam animi. Possimus.
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
+      <Box
+        sx={{
+          'display': 'flex',
+          'borderBottom': '1px solid black'
+        }}
+      >
+        <Link href="/experience" underline="none" sx={{'&:hover': {'color': 'secondary.main'}}}>
+          <Typography variant="h5">Check out my experience <ArrowRightAlt fontSize="inherit"/></Typography>
+        </Link>
+      </Box>
     </Box>
   );
 }

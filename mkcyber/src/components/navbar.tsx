@@ -28,7 +28,7 @@ import { Home } from '@mui/icons-material';
  */
 let data : [string, string, ReactNode][] = [
     ['Home', '/', <HomeOutlinedIcon sx={{'padding': '0px'}} /> ],
-    ['Portfolio', '/portfolio', <BusinessCenterOutlinedIcon sx={{'padding': '0px'}} />], 
+    ['Portfolio', '/experience', <BusinessCenterOutlinedIcon sx={{'padding': '0px'}} />], 
     ['Security+', '/security-plus', <SecurityOutlinedIcon sx={{'padding': '0px'}} />], 
     ['Resources', '/resources', <LibraryBooksOutlinedIcon sx={{'padding': '0px'}} />]
 ]

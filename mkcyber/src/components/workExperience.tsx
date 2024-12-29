@@ -10,6 +10,7 @@ import ListItem from '@mui/material/ListItem';
 export default function Experience(){
     return(
         <Box>
+        <Typography variant='h4' color="secondary.dark" fontWeight='bold'>Work Experience</Typography>
         <Card variant="outlined">
             <CardContent>
               <Typography color="secondary.dark"><b>Undergraduate Research Assistant</b></Typography>
