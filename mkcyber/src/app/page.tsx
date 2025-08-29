@@ -83,12 +83,12 @@ export default function Home({
               <EmailIcon />
             </Button>
           </Link> 
-          <Link>
+          <Link href={'https://github.com/Mia-Y-Kelly'} target="_blank">
             <Button variant="contained" color="primary" disableElevation>
               <GitHubIcon />
             </Button>
           </Link>
-          <Link>
+          <Link href={'https://www.linkedin.com/in/mia-kelly-mtu/'} target="_blank">
             <Button variant="contained" color="primary" disableElevation>
               <LinkedInIcon />
             </Button>
@@ -153,7 +153,7 @@ export default function Home({
             <Projects />
             </TabPanel>
           </TabContext> 
-
+      </Box>
     </Box>
   );
 }

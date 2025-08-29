@@ -23,7 +23,7 @@ const theme = createTheme({
       disabled: 'rgba(0, 0, 0, 0.12)',
     },
     primary: {            // Green
-      main: '#243727',
+      main: '#344e38ff',
       light: '#4a694d',
       dark: '#111d13',
       contrastText: lightPink,
@@ -39,7 +39,7 @@ const theme = createTheme({
       // default: '#f0fff0',   // Sets background
       // default: '#E2F1E2',
       // default: '#FFFFFF',
-      paper: '#243727',     // Sets background for components
+      paper: '#344e38ff',     // Sets background for components
     },
   },
   typography: {
