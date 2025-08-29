@@ -10,7 +10,6 @@ import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 
 
-import CourseSection from "../components/courseSection";
 
 // Import icons
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -33,8 +32,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 // Components
 import WorkExperience from "../components/workExperience";
+import Certifications from "../components/certifications";
 import Projects from "../components/projects";
-
 
 let ogPhotoHeight: number = 3797
 let ogPhotoWidth: number = 2850
@@ -47,25 +46,8 @@ export default function Home({
 }: {
   children: ReactNode
 }) {
-  // const accordionStyle = {
-  //   'borderTop': '2px solid black',
-  //   'borderRight': '2px solid black',
-  //   'borderLeft': '2px solid black',
-  //   'borderBottom': '2px solid #800f2f',
-  //   'boxShadow': '0rem .5rem #800f2f',
-  //   'borderRadius': '.75rem',
-  //   'backgroundColor': '#FFF',
-  //   'marginBottom': '1.5rem',
-  //   '&:hover': {
-  //       'backgroundColor': '#FFCCCD',
-  //   }
-  // }
-
-  // const itemStyling = {
-  //     'borderRadius': '0rem 0rem 1rem 1rem'
-  // }
   const [value, setValue] = useState(0);
-   const categories: readonly string[] = ['Work Experience', 'Additional Projects']
+   const categories: readonly string[] = ['Work Experience', 'Certifications', 'Home Lab']
     
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -130,80 +112,49 @@ export default function Home({
               quality={100}
 
               style={{
-                borderRadius: '100%',
-                boxShadow: '2px 2px 2px #111d13'
+                borderRadius: '100%'
               }}
           />
-          <Box sx={{width: '60vw', margin: '15px 0 5vh 0'}}>
-            <Typography lineHeight={1.75} color="text.primary" align="center">
-              I am a graduate of Michigan Technological University with a BS in Computer Science and a minor in cybersecurity. I am actively seeking employment opportunities, and I am open to relocation.
-            </Typography>
-            <br/>
-            <Typography lineHeight={1.75} color="text.primary" align="center">
-              I previously worked an internship at Fidelity Investments. My other work experience includes a research position developing an educational cybersecurity platform and working at my university's IT department.
-            </Typography>
-            <br/>
-            <Typography lineHeight={1.75} color="text.primary" align="center">
-              During my time at Michigan Tech, I was active member of both the Networking and Computing Student Association (NCSA) and IT Oxygen Enterprise. My involvement in these organizations has contributed to the development of my skillset with projects spanning full-stack development, machine learning, and cloud technologies. Outside of work and academic clubs, I enjoy swimming, reading, and collecting mechanical keyboards.
-            </Typography>
-          </Box>
         </Box>
       </Box>
-    
-     {/* <Accordion
-        square
-        disableGutters
-        // sx={accordionStyle}
-        elevation={0}
-      >
-        <AccordionSummary
-          aria-controls="panel-content"
-          expandIcon={<ExpandMoreIcon />}
-          
-        >
-           <Typography>Expand More</Typography> 
-        </AccordionSummary>
-        <AccordionDetails>*/}
-          {/* <TabContext value={value}>
-            <TabList
+      <Box sx={{margin: '1vh 0 1vh 0'}}>
+        <TabContext value={value}>
+          <TabList
             onChange={handleTabChange}
             centered
             textColor="secondary"
             indicatorColor="secondary"
             aria-label="Categories"
-            >
-            {
-                categories.map((cat, index) => ( 
-                    <Tab
+          >
+          {
+              categories.map((cat, index) => ( 
+                  <Tab
                     disableRipple
                     disableFocusRipple
                     label={<Typography variant="h5" fontWeight="fontWeightBold">{cat}</Typography>} 
                     key={index}
                     value={index}
-                    />
-                ))
-            }
-            </TabList> */}
-            {/* WORK EXPERIENCE SECTION */}
-            {/* <TabPanel key={0} value={0}>
+                  />
+              ))
+          }
+          </TabList>
+          {/* WORK EXPERIENCE SECTION */}
+          <TabPanel key={0} value={0}>
             <WorkExperience />
-            </TabPanel> */}
+          </TabPanel>
 
-            {/* PROJECTS SECTION */}
-            {/* <TabPanel key={1} value={1}>
+          {/* CERTIFICATIONS */}
+          <TabPanel key={1} value={1}>
+            <Certifications />
+          </TabPanel>
+
+          {/* HOME LAB */}
+          <TabPanel key={2} value={2}>
             <Projects />
-            </TabPanel>
-          </TabContext> 
-        </AccordionDetails>
-      </Accordion> */}
-      <Accordion>
-        <AccordionSummary>
-          Testing
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga necessitatibus mollitia possimus doloribus! Itaque atque quibusdam perspiciatis sunt voluptatem minima, molestiae soluta natus dolore totam voluptate impedit explicabo quasi eveniet, reiciendis quo dolor culpa. Officiis, possimus odit minus molestias doloremque pariatur cupiditate quas officia reprehenderit asperiores quasi! Voluptatum enim impedit nobis quaerat, eius iusto repellendus odit reiciendis non ullam nulla corrupti libero tenetur expedita saepe labore accusamus rem unde et nihil hic placeat nemo. Laboriosam nihil nemo magnam eveniet eaque maxime. Assumenda repellat modi neque accusamus omnis qui, dolore, repellendus dolorum cumque, libero dolor recusandae eveniet ex laudantium iure in. Est esse eveniet perferendis, pariatur quam quas? Cupiditate qui laboriosam repudiandae ipsa quasi aliquid illum asperiores, accusantium iure recusandae consequatur eius excepturi inventore, voluptatibus vero magni, commodi modi? Numquam ipsam assumenda accusamus repellendus ad excepturi, laboriosam dolor praesentium quas exercitationem amet magnam sapiente quidem cum quis illo sequi veniam rerum labore facilis saepe, eligendi alias soluta! Ad nisi ut, deserunt soluta, fugiat quidem magnam sequi ab fuga consequatur laborum maxime a enim ipsum. At deserunt reiciendis ex sunt fuga velit, non excepturi optio reprehenderit, impedit amet exercitationem labore iste mollitia quam vitae ipsa eos totam facilis modi nam animi. Possimus.
-        </AccordionDetails>
-      </Accordion>
+          </TabPanel>
+        </TabContext>
+      </Box>
+      
     </Box>
   );
 }

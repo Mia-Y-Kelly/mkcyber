@@ -27,16 +27,13 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
 
-const projDesc: string[] = ['Developing JavaScript-based terminal that allows SSH connections; will be embeddable in applications', 'Created a malicious IP checker using a random bloom filter', 'Tool intended to emulate the paywalled function of the popular study tool Quizlet', 'Application to calculate food waste when given a raw data file. Used this project to learn the basics of MatLab.', 'Data science project intended to predict the movement of cells'];
-
-const projSkills : string[] = ['Xterm.js, Docker', 'C++, Random Bloom Filter (RBF), Hashing', 'React, Java Spring Boot, PostgreSQL, AWS EC2, Apache Tomcat, Agile (Scrum)',  'MatLab, MatLab App Design', 'Keras, MatPlotLib, Panadas, NumPy, Bash, Anaconda, Agile (Scrum)'];
+const projDesc: string[] = ['Self-hosted password manager coming soon...', 'Self-hosted internal documentation server....'];
 
 
-const courseCat: readonly string[] = ['HuskyTerm', 'Malicious Packet Checker', 'StudyUp', 'Green Campus Enterprise Food Calculator', 'AI Cell Membrane Detection']
+const courseCat: readonly string[] = ['Vaultwarden', 'Bookstack']
 
 const courses: readonly string[][] = [
-    projDesc,
-    projSkills
+    projDesc
 ]
 
 export default function Projects(){
@@ -90,9 +87,6 @@ export default function Projects(){
                         <AccordionDetails sx={itemStyling}>
                             <Typography >
                                 {projDesc[index]}
-                            </Typography>
-                            <Typography>
-                                <b style={{color: "#800f2f"}}>Skills:</b> {projSkills[index]}
                             </Typography>
                         </AccordionDetails>
                     </Accordion>

@@ -4,6 +4,9 @@ const nextConfig = {
     devIndicators: {
         appIsrStatus: false,
     },
+    images: {
+        qualities: [100],
+    },
 };
 
 export default nextConfig;

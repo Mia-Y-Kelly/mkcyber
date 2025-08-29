@@ -22,7 +22,6 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <Box>
-              <Navbar />
               {props.children}
             </Box>
             
