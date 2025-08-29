@@ -151,10 +151,9 @@ export default function Home({
           {/* HOME LAB */}
           <TabPanel key={2} value={2}>
             <Projects />
-          </TabPanel>
-        </TabContext>
-      </Box>
-      
+            </TabPanel>
+          </TabContext> 
+
     </Box>
   );
 }
