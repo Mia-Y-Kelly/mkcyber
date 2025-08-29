@@ -41,11 +41,7 @@ let scale: number = 12
 
 
 
-export default function Home({
-  children
-}: {
-  children: ReactNode
-}) {
+export default function Home() {
   const [value, setValue] = useState(0);
    const categories: readonly string[] = ['Work Experience', 'Certifications', 'Home Lab']
     
