@@ -30,8 +30,8 @@ export default function Experience(){
                   <ListItem sx={{display: 'list-item', listStylePosition: 'inside', padding: 0}}>Set up testing environment from hardware installation to verification through simulations</ListItem>
               </List>
               <Typography><b style={{color: "#800f2f"}}>Skills:</b> C++, Java, RHEL, RKE2 (Kubernetes), Ansible, Docker, VMware ESXi, Atlassian Suite</Typography>
-            </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
           <Card variant="outlined">
               <CardContent>
                 <Typography color="secondary.dark"><b>Undergraduate Research Assistant</b></Typography>

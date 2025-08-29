@@ -19,7 +19,7 @@ const theme = createTheme({
     mode: 'light',
     text: {
       primary: 'rgb(19, 21, 21)', // Black text color
-      secondary: '#ff758f',  // Light Pink Text color
+      secondary: '#65996aff',  // Light Pink Text color
       disabled: 'rgba(0, 0, 0, 0.12)',
     },
     primary: {            // Green

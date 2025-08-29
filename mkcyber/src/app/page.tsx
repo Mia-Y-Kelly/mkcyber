@@ -34,6 +34,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import WorkExperience from "../components/workExperience";
 import Certifications from "../components/certifications";
 import Projects from "../components/projects";
+import Work from "../components/work";
 
 let ogPhotoHeight: number = 3797
 let ogPhotoWidth: number = 2850
@@ -44,12 +45,15 @@ let scale: number = 12
 export default function Home() {
   const [value, setValue] = useState(0);
    const categories: readonly string[] = ['Work Experience', 'Certifications', 'Home Lab']
+
+   const links: readonly string[] = ['#work', '#certifications', '#lab']
     
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   return (
+    
     <Box
       sx={{
         width: '60vw',
@@ -113,43 +117,33 @@ export default function Home() {
           />
         </Box>
       </Box>
-      <Box sx={{margin: '1vh 0 1vh 0'}}>
+      <Box>
         <TabContext value={value}>
           <TabList
             onChange={handleTabChange}
+            textColor="primary"
+            indicatorColor="primary"
             centered
-            textColor="secondary"
-            indicatorColor="secondary"
             aria-label="Categories"
           >
-          {
-              categories.map((cat, index) => ( 
-                  <Tab
-                    disableRipple
-                    disableFocusRipple
-                    label={<Typography variant="h5" fontWeight="fontWeightBold">{cat}</Typography>} 
-                    key={index}
-                    value={index}
-                  />
-              ))
-          }
+            {
+                categories.map((cat, index) => (
+                    <Tab
+                      disableRipple
+                      disableFocusRipple
+                      label={<Typography variant="h5" fontWeight="fontWeightBold">{cat}</Typography>} 
+                      key={index}
+                      value={index}
+                      href={links[index]}
+                    />
+                ))
+            }
           </TabList>
-          {/* WORK EXPERIENCE SECTION */}
-          <TabPanel key={0} value={0}>
-            <WorkExperience />
-          </TabPanel>
-
-          {/* CERTIFICATIONS */}
-          <TabPanel key={1} value={1}>
-            <Certifications />
-          </TabPanel>
-
-          {/* HOME LAB */}
-          <TabPanel key={2} value={2}>
-            <Projects />
-            </TabPanel>
-          </TabContext> 
+          </TabContext>  
       </Box>
+      <Work />
+      <Certifications />
+      <Projects />
     </Box>
   );
 }

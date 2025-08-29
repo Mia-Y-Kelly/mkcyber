@@ -63,7 +63,8 @@ export default function Projects(){
     }
 
     return(
-        <Box>
+        <Box id="lab">
+            <Typography variant="h4" color="primary" fontWeight="fontWeightBold">Home Lab</Typography>
             <Box>
             {
                 courseCat.map((cat, index) => (

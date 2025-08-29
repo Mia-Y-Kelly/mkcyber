@@ -9,7 +9,8 @@ import ListItem from '@mui/material/ListItem';
 
 export default function Certifications(){ 
     return(
-        <Box>
+        <Box id="certifications">
+            <Typography variant="h4" color="primary" fontWeight="fontWeightBold">Certifications</Typography>
             <Card variant="outlined">
                 <CardContent>
                 <Typography color="secondary.dark"><b>Security+ CE</b></Typography>
