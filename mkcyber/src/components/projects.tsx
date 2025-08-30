@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
+import Link from '@mui/material/Link';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
@@ -19,6 +19,7 @@ import Divider from '@mui/material/Divider';
 // Icons
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import LaunchIcon from '@mui/icons-material/Launch';
 
 // List
 import List from '@mui/material/List';
@@ -27,11 +28,17 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
 
-const projDesc: string[] = ['Self-hosted password manager coming soon...', 'Self-hosted internal documentation server coming soon....'];
+const projDesc: string[] = ['Self-hosted password manager coming soon...', 'Self-hosted internal documentation server coming soon....', 'Using TrueNAS as a storage solution', 'Implemented Tailscale VPN across PC, Laptop, VM\'s, etc.'];
 
 
-const courseCat: readonly string[] = ['Vaultwarden', 'Bookstack']
+const courseCat: readonly string[] = ['Vaultwarden', 'Bookstack', 'TrueNAS', 'VPN']
 
+const links: readonly string[] = [
+    'https://github.com/dani-garcia/vaultwarden/wiki',
+    'https://www.bookstackapp.com/docs/user/content-overview/',
+    'https://www.truenas.com/docs/',
+    'https://tailscale.com/kb/1151/what-is-tailscale',
+]
 const courses: readonly string[][] = [
     projDesc
 ]
@@ -88,6 +95,9 @@ export default function Projects(){
                         <AccordionDetails sx={itemStyling}>
                             <Typography >
                                 {projDesc[index]}
+                                <Link href={links[index]} target="_blank">
+                                    <LaunchIcon fontSize='inherit' sx={{color: 'black'}}/>
+                                </Link>
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
