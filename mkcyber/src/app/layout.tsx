@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from "../styles/themes/theme";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer"
 import Box from '@mui/material/Box';
 
 export const metadata: Metadata = {
@@ -21,10 +22,11 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
+            <Navbar />
             <Box>
               {props.children}
             </Box>
-            
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
