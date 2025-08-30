@@ -20,7 +20,7 @@ import ListItem from '@mui/material/ListItem';
 
 export default function Work(){
     return (
-        <Box>
+        <Box sx={{marginTop: '5vh'}}>
             <Typography variant="h4" color="primary" fontWeight="fontWeightBold" id='work'>Work Experience</Typography>
             <Timeline
                 sx={{
@@ -42,7 +42,7 @@ export default function Work(){
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Card variant="outlined">
+                    <Card variant="work">
                         <CardContent>
                         <Typography color="secondary.dark"><b>Associate Software Engineer</b></Typography>
                         <Box
@@ -77,7 +77,7 @@ export default function Work(){
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Card variant="outlined">
+                    <Card variant="work">
                         <CardContent>
                             <Typography color="secondary.dark"><b>Undergraduate Research Assistant</b></Typography>
                             <Box
@@ -114,7 +114,7 @@ export default function Work(){
                     <TimelineConnector/>
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Card variant="outlined">
+                    <Card variant="work">
                         <CardContent>
                             <Typography color="secondary.dark"><b>Full Stack Intern</b></Typography>
                             <Box
@@ -149,7 +149,7 @@ export default function Work(){
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Card variant="outlined" >
+                    <Card variant="work" >
                         <CardContent>
                             <Typography color="secondary.dark"><b>IT Technician</b></Typography>
                             <Box

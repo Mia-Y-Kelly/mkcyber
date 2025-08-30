@@ -27,7 +27,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
 
-const projDesc: string[] = ['Self-hosted password manager coming soon...', 'Self-hosted internal documentation server....'];
+const projDesc: string[] = ['Self-hosted password manager coming soon...', 'Self-hosted internal documentation server coming soon....'];
 
 
 const courseCat: readonly string[] = ['Vaultwarden', 'Bookstack']
@@ -63,8 +63,8 @@ export default function Projects(){
     }
 
     return(
-        <Box id="lab">
-            <Typography variant="h4" color="primary" fontWeight="fontWeightBold">Home Lab</Typography>
+        <Box id="lab" sx={{marginTop: '5vh'}}>
+            <Typography variant="h4" color="primary" fontWeight="fontWeightBold" marginBottom='3vh'>Home Lab</Typography>
             <Box>
             {
                 courseCat.map((cat, index) => (

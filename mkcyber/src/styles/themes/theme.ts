@@ -6,11 +6,25 @@ const lightPink = '#F8BBD0';
 // Augment the palette to include an about color
 declare module '@mui/material/styles' {
   interface Palette {
-    about: Palette['primary'];
+    footer: Palette['primary'];
   }
 
   interface PaletteOptions {
-    about?: PaletteOptions['primary'];
+    footer?: PaletteOptions['primary'];
+  }
+}
+
+// Augment the palete to include a work varient
+declare module '@mui/material/Paper' {
+  interface PaperPropsVariantOverrides {
+    work: true;
+    cert: true;
+  }
+}
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    navButton: true;
   }
 }
 
@@ -28,6 +42,11 @@ const theme = createTheme({
       dark: '#111d13',
       contrastText: lightPink,
     },
+    footer: {
+      main: 'rgba(0, 0, 0, 0.3)',
+      light: '',
+      dark: '', 
+    },
     secondary: {          // Pink
       main: '#800f2f',
       // light: '#ffb3c1',
@@ -39,7 +58,7 @@ const theme = createTheme({
       // default: '#f0fff0',   // Sets background
       // default: '#E2F1E2',
       // default: '#FFFFFF',
-      paper: '#344e38ff',     // Sets background for components
+      paper: '#f8f9fa',     // Sets background for components
     },
   },
   typography: {
@@ -57,6 +76,23 @@ const theme = createTheme({
         }
       }
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          variants: [
+            {
+              props: {variant: 'navButton'},
+              style: {
+                
+                ':hover': {
+                  textDecoration: 'underline',
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
     MuiListItemButton: {
       styleOverrides: {
         root: {
@@ -71,8 +107,7 @@ const theme = createTheme({
           ':hover': {
             background: 'rgba(231, 241, 231, .2)',
             
-          }
-
+          },
         }
       }
     },
@@ -86,11 +121,31 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: '#FFF',
-          borderRadius: '12px',
-          border: '1px solid rgb(50, 50, 50)',
-          boxShadow: '12px 12px 0px rgb(50, 50, 50)',
-          margin: '1vh 0 3vh 0',
+          variants: [
+            {
+              props: { variant: 'work' },
+              style: {
+                backgroundColor: '#FFF',
+                borderRadius: '12px',
+                border: '1px solid rgb(50, 50, 50)',
+                boxShadow: '12px 12px 0px rgb(50, 50, 50)',
+                margin: '1vh 0 3vh 0',
+              }
+            },
+            {
+              props: { variant: 'cert' },
+              style: {
+                backgroundColor: '#eeeeeeff',
+                border: '1px solid rgba(0, 0, 0, 0.15)',
+                height: '275px',
+                width: '375px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }
+            }
+          ],
+          
         }
       }
     },
@@ -107,6 +162,20 @@ const theme = createTheme({
           'backgroundColor': '#FFF',
           'elevation': '0',
           'boxShadow': 'none',
+        }
+      }
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          background: '#4a694d',
+        }
+      }
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          justifyContent: 'right',
         }
       }
     }

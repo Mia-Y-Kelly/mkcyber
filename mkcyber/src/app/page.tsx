@@ -31,7 +31,6 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 // Components
-import WorkExperience from "../components/workExperience";
 import Certifications from "../components/certifications";
 import Projects from "../components/projects";
 import Work from "../components/work";
@@ -60,7 +59,7 @@ export default function Home() {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        margin: '5vh auto 5vh auto',
+        margin: '10vh auto 5vh auto',
         gap: '0 0'
       }}
     >
@@ -118,28 +117,6 @@ export default function Home() {
         </Box>
       </Box>
       <Box>
-        <TabContext value={value}>
-          <TabList
-            onChange={handleTabChange}
-            textColor="primary"
-            indicatorColor="primary"
-            centered
-            aria-label="Categories"
-          >
-            {
-                categories.map((cat, index) => (
-                    <Tab
-                      disableRipple
-                      disableFocusRipple
-                      label={<Typography variant="h5" fontWeight="fontWeightBold">{cat}</Typography>} 
-                      key={index}
-                      value={index}
-                      href={links[index]}
-                    />
-                ))
-            }
-          </TabList>
-          </TabContext>  
       </Box>
       <Work />
       <Certifications />
